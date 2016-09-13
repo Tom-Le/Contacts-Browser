@@ -8,10 +8,15 @@
 
 import Foundation
 
-public struct Contact {
+public struct Contact: Equatable {
 
     let fullName: String
     let phoneNumbers: [String]
+
+    public static func == (left: Contact, right: Contact) -> Bool {
+        return left.fullName == right.fullName
+            && left.phoneNumbers == right.phoneNumbers
+    }
 
 }
 
