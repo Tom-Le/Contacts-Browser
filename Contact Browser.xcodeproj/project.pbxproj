@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E75E88F31D888FEC00869AE0 /* AbstractContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E88F21D888FEC00869AE0 /* AbstractContactStore.swift */; };
+		E75E88F51D88970700869AE0 /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E88F41D88970700869AE0 /* ContactStore.swift */; };
 		E767686B1D8729B900EC9AE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767686A1D8729B900EC9AE5 /* AppDelegate.swift */; };
 		E767686D1D8729B900EC9AE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767686C1D8729B900EC9AE5 /* ViewController.swift */; };
 		E76768701D8729B900EC9AE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E767686E1D8729B900EC9AE5 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E75E88F21D888FEC00869AE0 /* AbstractContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractContactStore.swift; sourceTree = "<group>"; };
+		E75E88F41D88970700869AE0 /* ContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
 		E76768671D8729B900EC9AE5 /* Contact Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contact Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E767686A1D8729B900EC9AE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E767686C1D8729B900EC9AE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E75E88F71D8897B600869AE0 /* Contact Store */ = {
+			isa = PBXGroup;
+			children = (
+				E75E88F21D888FEC00869AE0 /* AbstractContactStore.swift */,
+				E75E88F41D88970700869AE0 /* ContactStore.swift */,
+			);
+			name = "Contact Store";
+			sourceTree = "<group>";
+		};
 		E767685E1D8729B800EC9AE5 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,7 @@
 		E76768691D8729B900EC9AE5 /* Contact Browser */ = {
 			isa = PBXGroup;
 			children = (
+				E75E88F71D8897B600869AE0 /* Contact Store */,
 				E767686A1D8729B900EC9AE5 /* AppDelegate.swift */,
 				E767686C1D8729B900EC9AE5 /* ViewController.swift */,
 				E767686E1D8729B900EC9AE5 /* Main.storyboard */,
@@ -261,6 +275,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E767686D1D8729B900EC9AE5 /* ViewController.swift in Sources */,
+				E75E88F31D888FEC00869AE0 /* AbstractContactStore.swift in Sources */,
+				E75E88F51D88970700869AE0 /* ContactStore.swift in Sources */,
 				E767686B1D8729B900EC9AE5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
