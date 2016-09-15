@@ -66,7 +66,7 @@ class ContactsViewModelTests: XCTestCase {
 
     /// Test getting section header titles with a filter keyword set.
     func testGettingNumberOfSectionsWithFilterKeyword() {
-        let viewModel = ContactsViewModel(store: dummyStore, filter: "Amanda")
+        var viewModel = ContactsViewModel(store: dummyStore, filter: "Amanda")
         XCTAssertTrue(viewModel.sectionHeaders == ["A"])
 
         viewModel.filter = "S"

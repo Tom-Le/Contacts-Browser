@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class ContactsViewModel {
+public struct ContactsViewModel {
 
     // Contacts store.
     private let store: AbstractContactStore
@@ -18,10 +18,15 @@ public final class ContactsViewModel {
     private var contacts: [String : [Contact]]?
 
     // Filter keyword.
-    public var filter: String? {
+    var filter: String? {
         didSet {
             populateContacts()
         }
+    }
+
+    /// Section headers.
+    var sectionHeaders: [String] {
+        return contacts?.keys.sorted() ?? []
     }
 
     /**
@@ -33,7 +38,7 @@ public final class ContactsViewModel {
      store whose names contain this string.
 
      */
-    public required init(store: AbstractContactStore, filter: String?) {
+    init(store: AbstractContactStore, filter: String?) {
         self.store = store
         self.filter = filter
 
@@ -47,13 +52,8 @@ public final class ContactsViewModel {
      - Parameter store: A contact store.
 
      */
-    public convenience init(store: AbstractContactStore) {
+    init(store: AbstractContactStore) {
         self.init(store: store, filter: nil)
-    }
-
-    /// Section headers.
-    public var sectionHeaders: [String] {
-        return contacts?.keys.sorted() ?? []
     }
 
     /**
@@ -65,7 +65,7 @@ public final class ContactsViewModel {
      - Returns: Number of contacts.
  
      */
-    public func numberOfContactsIn(section: Int) -> Int {
+    func numberOfContactsIn(section: Int) -> Int {
         if section < 0 || section >= sectionHeaders.count { return 0 }
         let header = sectionHeaders[section]
         return contacts?[header]?.count ?? 0
@@ -81,7 +81,7 @@ public final class ContactsViewModel {
      - Returns: A contact, or `nil` if no contact is found.
 
      */
-    public func contactAt(index: Int, section: Int) -> Contact? {
+    func contactAt(index: Int, section: Int) -> Contact? {
         // Get section header.
         if section < 0 || section >= sectionHeaders.count { return nil }
         let header = sectionHeaders[section]
@@ -97,7 +97,7 @@ public final class ContactsViewModel {
     // MARK: - Helpers
 
     /// Populate contacts dictionary.
-    func populateContacts() {
+    private mutating func populateContacts() {
         // Create empty contacts dictionary.
         var results = [String: [Contact]]()
 
