@@ -109,12 +109,7 @@ class ContactsTableViewController: UITableViewController, UISearchResultsUpdatin
             dialNumberAlertController.addAction(dialAction)
             dialNumberAlertController.addAction(cancelAction)
 
-            if let searchController = searchController, searchController.isActive {
-                searchController.present(dialNumberAlertController, animated: true)
-            }
-            else {
-                self.present(dialNumberAlertController, animated: true)
-            }
+            navigationController?.visibleViewController?.present(dialNumberAlertController, animated: true)
         }
 
         tableView.deselectRow(at: indexPath, animated: false)
@@ -139,12 +134,7 @@ class ContactsTableViewController: UITableViewController, UISearchResultsUpdatin
         let alertController = UIAlertController(title: appTitle, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: actionTitle, style: .default, handler: handler))
 
-        if let searchController = searchController, searchController.isActive {
-            searchController.present(alertController, animated: true)
-        }
-        else {
-            self.present(alertController, animated: true)
-        }
+        navigationController?.visibleViewController?.present(alertController, animated: true)
     }
 
     private func createViewModel() {
