@@ -12,9 +12,9 @@ import Contacts
 class ContactsTableViewController: UITableViewController, UISearchResultsUpdating {
 
     private let store = ContactStore()
-    private var viewModel: ContactsViewModel? = nil
+    private var viewModel: ContactsViewModel?
 
-    private var searchController: UISearchController? = nil
+    private var searchController: UISearchController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,28 +91,25 @@ class ContactsTableViewController: UITableViewController, UISearchResultsUpdatin
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let contact = viewModel?.contactAt(index: indexPath.row, section: indexPath.section) {
-            let name = contact.fullName
-            let phoneNumber = contact.phoneNumbers[0]
+            guard let contactDetailVC = self.storyboard?
+                .instantiateViewController(withIdentifier: "ContactDetailPopover") as? ContactDetailViewController
+                else { return }
 
-            let title = "Call \(name)"
-            let message = "Would you like to call \(name) at number: \(phoneNumber) ?"
-            let dialNumberAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            contactDetailVC.name = contact.fullName
+            contactDetailVC.phoneNumbers = contact.phoneNumbers
+            contactDetailVC.contactsViewController = self
+            contactDetailVC.modalPresentationStyle = .popover
 
-            let dialAction = UIAlertAction(title: "Yes", style: .default) { action in
-                DispatchQueue.main.async {
-                    self.callNumber(number: phoneNumber)
-                }
+            let contactPopoverPresentationController = contactDetailVC.popoverPresentationController
+            contactPopoverPresentationController?.delegate = contactDetailVC
+            contactPopoverPresentationController?.permittedArrowDirections = [.up, .down]
+            if let cell = tableView.cellForRow(at: indexPath) {
+                contactPopoverPresentationController?.sourceView = cell
+                contactPopoverPresentationController?.sourceRect = cell.bounds
             }
 
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-
-            dialNumberAlertController.addAction(dialAction)
-            dialNumberAlertController.addAction(cancelAction)
-
-            navigationController?.visibleViewController?.present(dialNumberAlertController, animated: true)
+            navigationController?.visibleViewController?.present(contactDetailVC, animated: true)
         }
-
-        tableView.deselectRow(at: indexPath, animated: false)
     }
 
     // MARK: - UISearchResultsUpdating
@@ -122,6 +119,13 @@ class ContactsTableViewController: UITableViewController, UISearchResultsUpdatin
         viewModel?.filter = hasNoSearchTerm ? nil : searchController.searchBar.text
 
         tableView.reloadData()
+    }
+
+    // MARK: - Transitioning between self's view and contact detail popover's.
+    func contactDetailPopoverDidDisappear() {
+        if let selectedRowIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedRowIndexPath, animated: true)
+        }
     }
 
     // MARK: - Helpers
@@ -140,15 +144,6 @@ class ContactsTableViewController: UITableViewController, UISearchResultsUpdatin
     private func createViewModel() {
         viewModel = ContactsViewModel(store: store)
         tableView.reloadData()
-    }
-
-    private func callNumber(number: String) {
-        let allowedCharacters = Set("1234567890+".characters)
-        let trimmedPhoneNumber = String(number.characters.filter { allowedCharacters.contains($0) })
-
-        if let url = URL(string: "tel://\(trimmedPhoneNumber)") {
-            UIApplication.shared.open(url)
-        }
     }
 
     private func openSettingsApp() {
