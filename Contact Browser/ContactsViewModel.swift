@@ -99,7 +99,7 @@ public final class ContactsViewModel {
     /// Populate contacts dictionary.
     func populateContacts() {
         // Create empty contacts dictionary.
-        var results = [String : [Contact]]()
+        var results = [String: [Contact]]()
 
         let success = store.enumerateContacts(matching: filter) {
             // Get first letter of contact's full name.
