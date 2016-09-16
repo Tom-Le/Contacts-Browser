@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E72F7CE81D88A4EF009B2AD4 /* ContactsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F7CE71D88A4EE009B2AD4 /* ContactsViewModelTests.swift */; };
+		E72F7CEA1D88B1AD009B2AD4 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F7CE91D88B1AD009B2AD4 /* ContactsViewModel.swift */; };
+		E75E88F31D888FEC00869AE0 /* AbstractContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E88F21D888FEC00869AE0 /* AbstractContactStore.swift */; };
+		E75E88F51D88970700869AE0 /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E88F41D88970700869AE0 /* ContactStore.swift */; };
 		E767686B1D8729B900EC9AE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767686A1D8729B900EC9AE5 /* AppDelegate.swift */; };
-		E767686D1D8729B900EC9AE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767686C1D8729B900EC9AE5 /* ViewController.swift */; };
+		E767686D1D8729B900EC9AE5 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767686C1D8729B900EC9AE5 /* ContactsTableViewController.swift */; };
 		E76768701D8729B900EC9AE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E767686E1D8729B900EC9AE5 /* Main.storyboard */; };
 		E76768721D8729B900EC9AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E76768711D8729B900EC9AE5 /* Assets.xcassets */; };
 		E76768751D8729B900EC9AE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76768731D8729B900EC9AE5 /* LaunchScreen.storyboard */; };
-		E76768801D8729B900EC9AE5 /* Contact_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767687F1D8729B900EC9AE5 /* Contact_BrowserTests.swift */; };
 		E767688B1D8729B900EC9AE5 /* Contact_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767688A1D8729B900EC9AE5 /* Contact_BrowserUITests.swift */; };
+		E7927D531D8B44AE00D25D07 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7927D521D8B44AE00D25D07 /* ContactDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +38,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E72F7CE71D88A4EE009B2AD4 /* ContactsViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewModelTests.swift; sourceTree = "<group>"; };
+		E72F7CE91D88B1AD009B2AD4 /* ContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		E75E88F21D888FEC00869AE0 /* AbstractContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractContactStore.swift; sourceTree = "<group>"; };
+		E75E88F41D88970700869AE0 /* ContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
 		E76768671D8729B900EC9AE5 /* Contact Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contact Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E767686A1D8729B900EC9AE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E767686C1D8729B900EC9AE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E767686C1D8729B900EC9AE5 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		E767686F1D8729B900EC9AE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E76768711D8729B900EC9AE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E76768741D8729B900EC9AE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E76768761D8729B900EC9AE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E767687B1D8729B900EC9AE5 /* Contact BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Contact BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E767687F1D8729B900EC9AE5 /* Contact_BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_BrowserTests.swift; sourceTree = "<group>"; };
 		E76768811D8729B900EC9AE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E76768861D8729B900EC9AE5 /* Contact BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Contact BrowserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E767688A1D8729B900EC9AE5 /* Contact_BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_BrowserUITests.swift; sourceTree = "<group>"; };
 		E767688C1D8729B900EC9AE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7927D521D8B44AE00D25D07 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +82,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E75E88F71D8897B600869AE0 /* Contact Store */ = {
+			isa = PBXGroup;
+			children = (
+				E75E88F21D888FEC00869AE0 /* AbstractContactStore.swift */,
+				E75E88F41D88970700869AE0 /* ContactStore.swift */,
+			);
+			name = "Contact Store";
+			sourceTree = "<group>";
+		};
 		E767685E1D8729B800EC9AE5 = {
 			isa = PBXGroup;
 			children = (
 				E76768691D8729B900EC9AE5 /* Contact Browser */,
-				E767687E1D8729B900EC9AE5 /* Contact BrowserTests */,
+				E767687E1D8729B900EC9AE5 /* Contact Browser Tests */,
 				E76768891D8729B900EC9AE5 /* Contact BrowserUITests */,
 				E76768681D8729B900EC9AE5 /* Products */,
 			);
@@ -97,9 +114,11 @@
 		E76768691D8729B900EC9AE5 /* Contact Browser */ = {
 			isa = PBXGroup;
 			children = (
-				E767686A1D8729B900EC9AE5 /* AppDelegate.swift */,
-				E767686C1D8729B900EC9AE5 /* ViewController.swift */,
+				E75E88F71D8897B600869AE0 /* Contact Store */,
+				E7927D501D8B442B00D25D07 /* Contacts Table View */,
+				E7927D511D8B448200D25D07 /* Contact Detail Popover View */,
 				E767686E1D8729B900EC9AE5 /* Main.storyboard */,
+				E767686A1D8729B900EC9AE5 /* AppDelegate.swift */,
 				E76768711D8729B900EC9AE5 /* Assets.xcassets */,
 				E76768731D8729B900EC9AE5 /* LaunchScreen.storyboard */,
 				E76768761D8729B900EC9AE5 /* Info.plist */,
@@ -107,12 +126,13 @@
 			path = "Contact Browser";
 			sourceTree = "<group>";
 		};
-		E767687E1D8729B900EC9AE5 /* Contact BrowserTests */ = {
+		E767687E1D8729B900EC9AE5 /* Contact Browser Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E767687F1D8729B900EC9AE5 /* Contact_BrowserTests.swift */,
+				E72F7CE71D88A4EE009B2AD4 /* ContactsViewModelTests.swift */,
 				E76768811D8729B900EC9AE5 /* Info.plist */,
 			);
+			name = "Contact Browser Tests";
 			path = "Contact BrowserTests";
 			sourceTree = "<group>";
 		};
@@ -125,6 +145,23 @@
 			path = "Contact BrowserUITests";
 			sourceTree = "<group>";
 		};
+		E7927D501D8B442B00D25D07 /* Contacts Table View */ = {
+			isa = PBXGroup;
+			children = (
+				E72F7CE91D88B1AD009B2AD4 /* ContactsViewModel.swift */,
+				E767686C1D8729B900EC9AE5 /* ContactsTableViewController.swift */,
+			);
+			name = "Contacts Table View";
+			sourceTree = "<group>";
+		};
+		E7927D511D8B448200D25D07 /* Contact Detail Popover View */ = {
+			isa = PBXGroup;
+			children = (
+				E7927D521D8B44AE00D25D07 /* ContactDetailViewController.swift */,
+			);
+			name = "Contact Detail Popover View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +172,7 @@
 				E76768631D8729B900EC9AE5 /* Sources */,
 				E76768641D8729B900EC9AE5 /* Frameworks */,
 				E76768651D8729B900EC9AE5 /* Resources */,
+				SWIFCLEANCUSTOMRUNSCRIPT /* Swift-Clean Run Script */,
 			);
 			buildRules = (
 			);
@@ -255,12 +293,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		SWIFCLEANCUSTOMRUNSCRIPT /* Swift-Clean Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift-Clean Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "if [[ -z ${SKIP_SWIFTCLEAN} || ${SKIP_SWIFTCLEAN} != 1 ]]; then\nif [[ -d \"${LOCAL_APPS_DIR}/Swift-Clean.app\" || -d \"${LOCAL_APPS_DIR}/Swift-Clean.app\" ]]; then \n\"${LOCAL_APPS_DIR}\"/Swift-Clean.app/Contents/Resources/SwiftClean.app/Contents/MacOS/SwiftClean \"${SRCROOT}\"?@autoFix \nelse\necho \"warning: You have to install and set up Swift-Clean to use its features!\" \nfi\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E76768631D8729B900EC9AE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E767686D1D8729B900EC9AE5 /* ViewController.swift in Sources */,
+				E767686D1D8729B900EC9AE5 /* ContactsTableViewController.swift in Sources */,
+				E72F7CEA1D88B1AD009B2AD4 /* ContactsViewModel.swift in Sources */,
+				E75E88F31D888FEC00869AE0 /* AbstractContactStore.swift in Sources */,
+				E75E88F51D88970700869AE0 /* ContactStore.swift in Sources */,
+				E7927D531D8B44AE00D25D07 /* ContactDetailViewController.swift in Sources */,
 				E767686B1D8729B900EC9AE5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E76768801D8729B900EC9AE5 /* Contact_BrowserTests.swift in Sources */,
+				E72F7CE81D88A4EF009B2AD4 /* ContactsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
