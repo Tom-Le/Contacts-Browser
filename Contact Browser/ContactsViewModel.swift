@@ -118,12 +118,7 @@ public struct ContactsViewModel {
             return true
         }
 
-        if !success {
-            contacts = nil
-        }
-        else {
-            contacts = results
-        }
+        contacts = success ? results : nil
     }
 
 }
